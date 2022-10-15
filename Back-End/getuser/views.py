@@ -9,11 +9,11 @@ def index(request):
         try:
             body = request.GET.dict()
             collection =  db.get_collection()
-            data = db.get_user_info(collection, body['_id'])
+            data = db.get_user_info(collection, body['_id'])            
 
             return JsonResponse({
                 'status': 200,
-                'data': json.loads(data),
+                'data': data,
             })
         except:
             print('Something went wrong with GET request for /getuser')

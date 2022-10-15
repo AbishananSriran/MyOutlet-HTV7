@@ -49,7 +49,7 @@ def insert_user_info(collection, user_info):
     return str(document_id)
 
 def get_user_info(collection, user_id):
-    return collection.find_one({"_id": ObjectId(user_id)})
+    return collection.find_one({"_id": ObjectId(user_id)}, {"_id": 0})
 
 def calculate_bounds_lat_long(offset, old_lat, old_long):
     # Offset in meters positive
