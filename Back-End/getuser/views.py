@@ -10,11 +10,11 @@ def index(request):
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
             collection =  db.get_collection()
-            data = db.get_user_info(collection, body['_id'])
+            data = db.get_user_info(collection, body['_id'])            
 
             return JsonResponse({
                 'status': 200,
-                'data': json.loads(data),
+                'data': data,
             })
         except:
             print('Something went wrong with GET request for /getuser')
