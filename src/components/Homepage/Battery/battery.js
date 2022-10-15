@@ -6,9 +6,28 @@ function Battery() {
 
     if (charge === "empty") {
         return (
-            <div className='battery'>
+            <>
+              <div className='battery'>
                 <img src='' alt='Social Battery'/>
-            </div>
+              </div>
+              <div className='batteryButtons'>
+                <h3>
+
+                </h3>
+                <h3>
+                    
+                </h3>
+                <h3>
+                    
+                </h3>
+                <h3>
+                    
+                </h3>
+                <h3>
+                    
+                </h3>
+              </div>
+            </>
         );
     } else if (charge === "low") {
         return (
