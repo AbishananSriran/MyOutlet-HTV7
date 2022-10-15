@@ -17,7 +17,7 @@ def index(request):
                 'status': 200,
             })
         except:
-            print('Something went wrong with POST request for /newuser')
+            print('Something went wrong with POST request for /updatebattery')
         
     return JsonResponse({
         'status': 400,

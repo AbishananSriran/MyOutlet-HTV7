@@ -11,14 +11,15 @@ def index(request):
         try:
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
-            lat = body['lat']
-            long = body['long']
+            userid = body['_id']
+            lat = body['latitude']
+            long = body['longitude']
 
             collection = db.get_collection()
-            data = db.query_nearby_users(collection, DEFAULT_OFFSET, lat, long)
+            data = db.query_nearby_users(collection, userid, DEFAULT_OFFSET, lat, long)
             return JsonResponse({
                 'status': 200,
-                'data': json.loads(data),
+                'data': json.dumps(data),
             })
         except:
             print("Something went wrong with GET request for /nearbyusers")
