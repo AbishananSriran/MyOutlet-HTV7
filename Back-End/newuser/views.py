@@ -10,25 +10,25 @@ USER_TEMPLATE = ['name', 'image', 'latitude', 'longitude', 'battery-level']
 @csrf_exempt
 def index(request):
     if request.method == 'POST':
-        body_unicode = request.body.decode('utf-8')
-        body = json.loads(body_unicode)
-        success = True
+        try:
+            body_unicode = request.body.decode('utf-8')
+            body = json.loads(body_unicode)
+            success = True
 
-        for key in USER_TEMPLATE:
-            if body.get(key) != None:
-                success = False
-                break
+            for key in USER_TEMPLATE:
+                if body.get(key) == None:
+                    success = False
+                    break
 
-        if success:
-            try:
+            if success:
                 collection = db.get_collection()
-                userid = db.insert_user_info(collection, json.dumps(body))
+                userid = db.insert_user_info(collection, body)
                 return JsonResponse({
                     'status': 200,
                     '_id': userid,
                 })
-            except:
-                print('Something went wrong with POST request for /newuser')
+        except:
+            print('Something went wrong with POST request for /newuser')
         
     return JsonResponse({
         'status': 400,

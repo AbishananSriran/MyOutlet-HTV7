@@ -6,9 +6,11 @@ import myoutlet.db_ops.db as db
 
 def index(request):
     if request.method == 'GET':
-        collection =  db.get_collection()
         try:
-            data = db.get_user_info(collection, request.GET.__getitem__('_id'))
+            body_unicode = request.body.decode('utf-8')
+            body = json.loads(body_unicode)
+            collection =  db.get_collection()
+            data = db.get_user_info(collection, body['_id'])
 
             return JsonResponse({
                 'status': 200,
