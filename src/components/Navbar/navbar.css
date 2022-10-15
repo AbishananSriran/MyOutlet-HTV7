@@ -2,6 +2,10 @@
     
 }
 
+.myOutlet {
+    width: 150px;
+}
+
 .options {
     display: flex;
     flex-direction: row;
@@ -9,6 +13,7 @@
     color: white;
     justify-content: flex-end;
     width: 85%;
+    margin-right: 5%;
 }
 
 .navItems {
@@ -21,6 +26,7 @@
     z-index: 99;
     right: 0%;
     left: 0%;
+    overflow-y: hidden;
 }
 
 .navLogo {
@@ -28,6 +34,7 @@
     justify-self: left;
     margin-left: 2%;
     margin-right: 3%;
+    margin-top: 3%;
     font-size: 1.7rem;
 }
 
@@ -58,10 +65,11 @@
     }
 
     .navLogo {
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        top: 25%;
-        left: 0;
+        color: #ffffff;
+        justify-self: left;
+        margin-left: 2%;
+        margin-right: 3%;
+        font-size: 1.7rem;
+        margin-top: 5%;
     }
 }
