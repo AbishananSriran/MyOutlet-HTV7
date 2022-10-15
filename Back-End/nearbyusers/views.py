@@ -9,8 +9,10 @@ DEFAULT_OFFSET = 100
 def index(request):
     if request.method == 'GET':
         try:
-            lat = request.GET.__getitem__('lat')
-            long = request.GET.__getitem__('long')
+            body_unicode = request.body.decode('utf-8')
+            body = json.loads(body_unicode)
+            lat = body['lat']
+            long = body['long']
 
             collection = db.get_collection()
             data = db.query_nearby_users(collection, DEFAULT_OFFSET, lat, long)
