@@ -10,14 +10,15 @@ def index(request):
     if request.method == 'GET':
         try:
             body = request.GET.dict()
+            userid = body['_id']
             lat = float(body['latitude'])
             long = float(body['longitude'])
 
             collection = db.get_collection()
-            data = db.query_nearby_users(collection, DEFAULT_OFFSET, lat, long)
+            data = db.query_nearby_users(collection, userid, DEFAULT_OFFSET, lat, long)
             return JsonResponse({
                 'status': 200,
-                'data': json.loads(data),
+                'data': json.dumps(data),
             })
         except:
             print("Something went wrong with GET request for /nearbyusers")

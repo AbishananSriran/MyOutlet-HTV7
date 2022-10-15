@@ -52,28 +52,36 @@ def get_user_info(collection, user_id):
     return collection.find_one({"_id": ObjectId(user_id)}, {"_id": 0})
 
 def calculate_bounds_lat_long(offset, old_lat, old_long):
-    # Offset in meters positive
+    # # Offset in meters positive
 
-    # number of km per degree = ~111km (111.32 in google maps, but range varies between 110.567km at the equator and 111.699km at the poles)
-    coef = offset / KM_PER_DEGREE
-    ncoef = (-1)*coef
+    # # number of km per degree = ~111km (111.32 in google maps, but range varies between 110.567km at the equator and 111.699km at the poles)
+    # coef = offset / KM_PER_DEGREE
+    # ncoef = (-1)*coef
 
-    upper_lat = old_lat + coef
-    lower_lat = old_lat + ncoef
+    # upper_lat = old_lat + coef
+    # lower_lat = old_lat + ncoef
 
-    # pi / 180 ~= 0.01745
-    upper_long = old_long + coef / cos(old_lat * pi180)
-    lower_long = old_long + ncoef / cos(old_lat * pi180)
-    return upper_lat, upper_long, lower_lat, lower_long
+    # # pi / 180 ~= 0.01745
+    # lower_long = old_long + coef / cos(old_lat * pi180)
+    # upper_long = old_long + ncoef / cos(old_lat * pi180)
+    y_offset = offset / 111111
+    upper_lat = old_lat + y_offset
+    lower_lat = old_lat - y_offset
 
-def query_nearby_users(collection, offset, lat, long):
-    upper_lat, upper_long, lower_lat, lower_long = calculate_bounds_lat_long(offset, lat, long)
+    x_offset = old_long / (111111 * abs(cos(old_lat)))
+    upper_long = old_long + x_offset
+    lower_long = old_long - x_offset
 
-    query = {"latitude": { "$gt": lower_lat, "$lt": upper_lat}, "longitude": { "$gt": lower_long, "$lt": upper_long}}
+    return upper_lat, lower_lat, upper_long, lower_long
 
-    res = collection.find(query)
+def query_nearby_users(collection, userid, offset, lat, long):
+    upper_lat, lower_lat, upper_long, lower_long = calculate_bounds_lat_long(offset, lat, long)
 
-    return res
+    query = {"_id": {"$ne": ObjectId(userid)}, "latitude": { "$gt": lower_lat, "$lt": upper_lat}, "longitude": { "$gt": lower_long, "$lt": upper_long}}
+
+    res = collection.find(query, {"_id": 0})
+    resl = [doc for doc in res]
+    return resl
 
 def delete_user_info(collection, user_id):
     collection.delete_one({"_id": ObjectId(user_id)})
