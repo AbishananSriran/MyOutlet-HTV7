@@ -7,8 +7,7 @@ import myoutlet.db_ops.db as db
 def index(request):
     if request.method == 'GET':
         try:
-            body_unicode = request.body.decode('utf-8')
-            body = json.loads(body_unicode)
+            body = request.GET.dict()
             collection =  db.get_collection()
             data = db.get_user_info(collection, body['_id'])            
 
