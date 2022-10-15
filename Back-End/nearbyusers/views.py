@@ -26,3 +26,5 @@ def index(request):
     return JsonResponse({
         'status': 400,
     })
+
+
