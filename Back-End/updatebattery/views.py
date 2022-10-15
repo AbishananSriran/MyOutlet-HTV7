@@ -12,13 +12,12 @@ def index(request):
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
             collection = db.get_collection()
-            userid = db.insert_user_info(collection, body['_id'], body['battery-level'])
+            db.update_user_battery(collection, body['_id'], body['battery-level'])
             return JsonResponse({
                 'status': 200,
-                '_id': userid,
             })
         except:
-            print('Something went wrong with POST request for /updatebattery')
+            print('Something went wrong with POST request for /newuser')
         
     return JsonResponse({
         'status': 400,
