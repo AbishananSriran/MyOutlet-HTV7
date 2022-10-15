@@ -1,10 +1,11 @@
 from django.http import JsonResponse
-import re
+from django.views.decorators.csrf import csrf_exempt
 import sys
 sys.path.append('../../')
 import myoutlet.db_ops.db as db
 
 # Create your views here.
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
         # do database stuff
