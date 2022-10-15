@@ -78,6 +78,11 @@ def query_nearby_users(collection, offset, lat, long):
 def delete_user_info(collection, user_id):
     collection.delete_one({"_id": ObjectId(user_id)})
 
+def update_user_battery(collection, user_id, battery_level):
+    query = {"_id": ObjectId(user_id)}
+    new_vals = { "$set": {"battery-level": battery_level}}
+    collection.update_one(query, new_vals)
+
 
 
 
