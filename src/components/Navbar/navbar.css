@@ -1,0 +1,67 @@
+.navButton {
+    
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    color: white;
+    justify-content: flex-end;
+    width: 85%;
+}
+
+.navItems {
+    background: linear-gradient(120deg, #000000 50%, #007100);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    position: fixed;
+    z-index: 99;
+    right: 0%;
+    left: 0%;
+}
+
+.navLogo {
+    color: #ffffff;
+    justify-self: left;
+    margin-left: 2%;
+    margin-right: 3%;
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 960px) { 
+    .navButton {
+        
+    }
+    
+    .options {
+        display: flex;
+        flex-direction: row;
+        column-gap: 10%;
+        color: white;
+        justify-content: flex-end;
+        width: 95%;
+    }    
+    
+    .navItems {
+        background: linear-gradient(120deg, #000000 30%, #007100);
+        height: 120px;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        position: fixed;
+        z-index: 99;
+        right: 0%;
+        left: 0%;
+    }
+
+    .navLogo {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 25%;
+        left: 0;
+    }
+}

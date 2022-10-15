@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar/index.js"
+import Navbar from "./components/Navbar/navbar.js"
 
 function App() {
   return (
