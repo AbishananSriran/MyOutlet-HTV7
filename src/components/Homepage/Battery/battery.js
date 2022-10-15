@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './battery.css'
 
-function battery() {
+function Battery() {
     const [charge, setCharge] = useState("empty")
 
     if (charge === "empty") {
@@ -36,4 +37,4 @@ function battery() {
     }
 }
 
-export default battery;
+export default Battery;

@@ -1,0 +1,8 @@
+.battery {
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    left: 20%;
+    height: 50%;
+    width: 20%;
+}
