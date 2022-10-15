@@ -1,11 +1,11 @@
 from math import pi, cos
 from bson.objectid import ObjectId
 import pymongo
-import getpass
 
 from random import randint
 
 pi180 = pi / 180
+KM_PER_DEGREE = 111.32;
 
 # ----------------------------------------------------------------------------------------------------------
 #  Prerequisites:
@@ -55,7 +55,7 @@ def calculate_bounds_lat_long(offset, old_lat, old_long):
     # Offset in meters positive
 
     # number of km per degree = ~111km (111.32 in google maps, but range varies between 110.567km at the equator and 111.699km at the poles)
-    coef = offset / 111.32;
+    coef = offset / KM_PER_DEGREE
     ncoef = (-1)*coef
 
     upper_lat = old_lat + coef
@@ -98,6 +98,24 @@ def delete_user_info(collection, user_id):
 #         print("Created collection {}". format(UNSHARDED_COLLECTION_NAME))
     
 #     return db.COLLECTION_NAME
+
+def get_collection():
+    """Connect to the API for MongoDB, create DB and collection, perform CRUD operations"""
+    client = pymongo.MongoClient(CONNECTION_STRING)
+    try:
+        client.server_info() # validate connection string
+    except pymongo.errors.ServerSelectionTimeoutError:
+        raise TimeoutError("Invalid API for MongoDB connection string or timed out when attempting to connect")
+
+    # collection = create_database_unsharded_collection(client)
+    # document_id = insert_sample_document(collection)
+    
+    # read_document(collection, document_id)
+    # update_document(collection, document_id)
+    # delete_document(collection, document_id)
+    db = client[DB_NAME]
+
+    return db[COLLECTION_NAME]
 
 def main():
     """Connect to the API for MongoDB, create DB and collection, perform CRUD operations"""
