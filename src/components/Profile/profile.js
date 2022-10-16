@@ -21,7 +21,7 @@ function Profile({ charge }) {
                     "battery-level": charge
                 })
             };
-            fetch('http://127.0.0.1:8000/', requestOptions)
+            fetch('http://127.0.0.1:8000/newuser/', requestOptions)
                 .then(response => response.json())
                 .then(data => console.log(data));
         } catch (error) {

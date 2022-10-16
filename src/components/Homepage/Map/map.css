@@ -1,0 +1,14 @@
+.mapContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+}
+
+.mapContainer {
+    
+}

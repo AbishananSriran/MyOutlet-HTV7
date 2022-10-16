@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/navbar.js"
 import Battery from "./components/Homepage/Battery/battery.js";
 import UserSettings from "./components/UserSettings/userSettings.js";
 import Profile from "./components/Profile/profile.js";
+import Map from "./components/Homepage/Map/map.js";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <div className="App">
         <Navbar profileClickCheck={setProfileClick} currProfileClick={profileClick} settingsClickCheck={setSettingsClick} currSettingsClick={settingsClick}/>
         <Battery charge={charge} setCharge={setCharge}/>
+        <Map/>
       </div>
     );
   }

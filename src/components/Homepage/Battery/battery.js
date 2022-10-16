@@ -39,7 +39,7 @@ function Battery({ charge, setCharge}) {
     } else if (charge === 2) {
         return (
             <div className='socialBattery'>
-              <img classname="batteryImg" src={lowImg} alt='Social Battery'/>
+              <img className="batteryImg" src={lowImg} alt='Social Battery'/>
               <div className='batteryButtons'>
                 <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
@@ -62,7 +62,7 @@ function Battery({ charge, setCharge}) {
     } else if (charge === 3) {
         return (
             <div className='socialBattery'>
-              <img classname="batteryImg" src={halfImg} alt='Social Battery'/>
+              <img className="batteryImg" src={halfImg} alt='Social Battery'/>
               <div className='batteryButtons'>
                 <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
@@ -85,7 +85,7 @@ function Battery({ charge, setCharge}) {
     } else if (charge === 4) {
         return (
             <div className='socialBattery'>
-              <img classname="batteryImg" src={highImg} alt='Social Battery'/>
+              <img className="batteryImg" src={highImg} alt='Social Battery'/>
               <div className='batteryButtons'>
                 <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
@@ -108,7 +108,7 @@ function Battery({ charge, setCharge}) {
     } else if (charge === 5) {
         return (
             <div className='socialBattery'>
-              <img classname="batteryImg" src={fullImg} alt='Social Battery'/>
+              <img className="batteryImg" src={fullImg} alt='Social Battery'/>
               <div className='batteryButtons'>
                 <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
