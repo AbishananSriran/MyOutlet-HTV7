@@ -11,6 +11,7 @@ def index(request):
         try:
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
+            print(body)
             collection = db.get_collection()
             db.update_user_battery(collection, body['_id'], body['battery-level'])
             return JsonResponse({
