@@ -79,9 +79,12 @@ def query_nearby_users(collection, userid, offset, lat, long):
 
     query = {"_id": {"$ne": ObjectId(userid)}, "latitude": { "$gt": lower_lat, "$lt": upper_lat}, "longitude": { "$gt": lower_long, "$lt": upper_long}}
 
-    res = collection.find(query, {"_id": 0})
-    resl = [doc for doc in res]
-    return resl
+    res = collection.find(query)
+    res_list = []
+    for doc in res:
+        doc["_id"] = str(doc["_id"])
+        res_list.append(doc)
+    return res_list
 
 def delete_user_info(collection, user_id):
     collection.delete_one({"_id": ObjectId(user_id)})
