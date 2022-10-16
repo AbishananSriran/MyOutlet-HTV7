@@ -2,13 +2,14 @@ import Navbar from "./components/Navbar/navbar.js"
 import Battery from "./components/Homepage/Battery/battery.js";
 import UserSettings from "./components/UserSettings/userSettings.js";
 import Profile from "./components/Profile/profile.js";
-import Map from "./components/Homepage/Map/map.js";
+import People from "./components/Homepage/People/people.js";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [charge, setCharge] = useState(1)
+  const [charge, setCharge] = useState(1);
   const [profileClick, setProfileClick] = useState(false);
   const [settingsClick, setSettingsClick] = useState(false);
+  const [id, setId] = useState(null);
   
   useEffect(() => {
     if (profileClick) {
@@ -26,7 +27,7 @@ function App() {
     return (
       <div className="App">
         <Navbar profileClickCheck={setProfileClick} currProfileClick={profileClick} settingsClickCheck={setSettingsClick} currSettingsClick={settingsClick}/>
-        <Profile charge={charge}/>
+        <Profile charge={charge} setId={setId}/>
       </div>
     );
   } else if (settingsClick) {
@@ -41,7 +42,7 @@ function App() {
       <div className="App">
         <Navbar profileClickCheck={setProfileClick} currProfileClick={profileClick} settingsClickCheck={setSettingsClick} currSettingsClick={settingsClick}/>
         <Battery charge={charge} setCharge={setCharge}/>
-        <Map/>
+        <People id={id}/>
       </div>
     );
   }

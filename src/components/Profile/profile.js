@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './profile.css'
 
-function Profile({ charge }) {
+function Profile({ charge, setId }) {
     const [longitude, setLongitude] = useState(null);
     const [latitude, setLatitude] = useState(null);
     const [name, setName] = useState(null);
@@ -23,10 +23,12 @@ function Profile({ charge }) {
             };
             fetch('http://127.0.0.1:8000/newuser/', requestOptions)
                 .then(response => response.json())
-                .then(data => console.log(data));
+                .then(data => setId(data._id))
         } catch (error) {
             console.log(error)
         }
+        console.log(longitude)
+        console.log(latitude)
     }, [longitude, latitude, name])
 
     const handleSubmit = async (e) => {

@@ -1,4 +1,4 @@
-.mapContainer {
+.listContainer {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -9,6 +9,10 @@
     height: 100%;
 }
 
-.mapContainer {
-    
+.list {
+    position: absolute;
+    background-color: white;
+    height: 60%;
+    width: 70%;
+    top: 20%;
 }
