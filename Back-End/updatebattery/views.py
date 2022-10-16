@@ -7,9 +7,7 @@ import myoutlet.db_ops.db as db
 
 @csrf_exempt
 def index(request):
-    print('ok')
     if request.method == 'POST':
-        print('ok')
         try:
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
