@@ -11,119 +11,118 @@ import ellipse3 from '../../../assets/Ellipse3.png'
 import ellipse2 from '../../../assets/Ellipse4.png'
 import ellipse1 from '../../../assets/Ellipse5.png'
 
-function Battery() {
-    const [charge, setCharge] = useState("empty")
+function Battery({ charge, setCharge}) {
 
-    if (charge === "empty") {
+    if (charge === 1) {
         return (
             <div className='socialBattery'>
-              <img classname="batteryImg" src={emptyImg} alt='Social Battery'/>
+              <img className="batteryImg" src={emptyImg} alt='Social Battery'/>
               <div className='batteryButtons'>
-                <h3 className='toggleBattery' onClick={() => setCharge("empty")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("low")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(2)} cursor='pointer'>
                     <img src={ellipse2} alt="Ellipse2"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("half")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(3)} cursor='pointer'>
                     <img src={ellipse3} alt="Ellipse3"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("high")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(4)} cursor='pointer'>
                     <img src={ellipse4} alt="Ellipse4"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("full")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(5)} cursor='pointer'>
                     <img src={ellipse5} alt="Ellipse5"/>
                 </h3>
               </div>
             </div>
         );
-    } else if (charge === "low") {
+    } else if (charge === 2) {
         return (
             <div className='socialBattery'>
               <img classname="batteryImg" src={lowImg} alt='Social Battery'/>
               <div className='batteryButtons'>
-                <h3 className='toggleBattery' onClick={() => setCharge("empty")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("low")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(2)} cursor='pointer'>
                     <img src={ellipse2} alt="Ellipse2"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("half")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(3)} cursor='pointer'>
                     <img src={ellipse3} alt="Ellipse3"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("high")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(4)} cursor='pointer'>
                     <img src={ellipse4} alt="Ellipse4"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("full")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(5)} cursor='pointer'>
                     <img src={ellipse5} alt="Ellipse5"/>
                 </h3>
               </div>
             </div>
         );
-    } else if (charge === "half") {
+    } else if (charge === 3) {
         return (
             <div className='socialBattery'>
               <img classname="batteryImg" src={halfImg} alt='Social Battery'/>
               <div className='batteryButtons'>
-                <h3 className='toggleBattery' onClick={() => setCharge("empty")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("low")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(2)} cursor='pointer'>
                     <img src={ellipse2} alt="Ellipse2"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("half")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(3)} cursor='pointer'>
                     <img src={ellipse3} alt="Ellipse3"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("high")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(4)} cursor='pointer'>
                     <img src={ellipse4} alt="Ellipse4"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("full")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(5)} cursor='pointer'>
                     <img src={ellipse5} alt="Ellipse5"/>
                 </h3>
               </div>
             </div>
         );
-    } else if (charge === "high") {
+    } else if (charge === 4) {
         return (
             <div className='socialBattery'>
               <img classname="batteryImg" src={highImg} alt='Social Battery'/>
               <div className='batteryButtons'>
-                <h3 className='toggleBattery' onClick={() => setCharge("empty")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("low")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(2)} cursor='pointer'>
                     <img src={ellipse2} alt="Ellipse2"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("half")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(3)} cursor='pointer'>
                     <img src={ellipse3} alt="Ellipse3"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("high")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(4)} cursor='pointer'>
                     <img src={ellipse4} alt="Ellipse4"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("full")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(5)} cursor='pointer'>
                     <img src={ellipse5} alt="Ellipse5"/>
                 </h3>
               </div>
             </div>
         );
-    } else if (charge === "full") {
+    } else if (charge === 5) {
         return (
             <div className='socialBattery'>
               <img classname="batteryImg" src={fullImg} alt='Social Battery'/>
               <div className='batteryButtons'>
-                <h3 className='toggleBattery' onClick={() => setCharge("empty")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(1)} cursor='pointer'>
                     <img src={ellipse1} alt="Ellipse1"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("low")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(2)} cursor='pointer'>
                     <img src={ellipse2} alt="Ellipse2"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("half")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(3)} cursor='pointer'>
                     <img src={ellipse3} alt="Ellipse3"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("high")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(4)} cursor='pointer'>
                     <img src={ellipse4} alt="Ellipse4"/>
                 </h3>
-                <h3 className='toggleBattery' onClick={() => setCharge("full")} cursor='pointer'>
+                <h3 className='toggleBattery' onClick={() => setCharge(5)} cursor='pointer'>
                     <img src={ellipse5} alt="Ellipse5"/>
                 </h3>
               </div>

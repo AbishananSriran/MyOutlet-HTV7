@@ -1,0 +1,57 @@
+.settingsWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 70vh;
+    margin-top: 11%;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.settingsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings {
+    font-size: 2.5rem;
+    text-decoration: underline;
+    padding-bottom: 0%;
+}
+
+.line {
+    background-color: black;
+    height: 2px;
+    width: 100%;
+    border: 0px;
+    margin-top: 5%;
+}
+
+.contact {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.toggleSettings {
+    display: flex;
+    padding-top: 2%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.slider {
+    background-color: red;
+}
+
+.label {
+    width: 50%;
+    padding-left: 20%;
+}
