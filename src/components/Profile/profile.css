@@ -1,0 +1,115 @@
+.profileWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 70vh;
+    margin-top: 11%;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    font-size: 2.5rem;
+    text-decoration: underline;
+    padding-bottom: 0%;
+}
+
+.info-form {
+    position: relative;
+    top: 30px;
+    width: 30vw;
+    min-width: 500px;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.firstname {
+    display: flex;
+    position: relative;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    width: 200px;
+    right: 0px;
+    left: -120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lastname {
+    display: flex;
+    position: relative;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    width: 200px;
+    left: 120px;
+    right: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    top: -27px;
+}
+
+.billing-address {
+    position: relative;
+    display: flex;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    width: 443px;
+    left: 0px;
+    right: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.number {
+    position: relative;
+    display: flex;
+    position: relative;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    width: 200px;
+    right: 0px;
+    left: -120px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30px;
+}
+
+.email {
+    position: relative;
+    display: flex;
+    position: relative;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+    width: 200px;
+    right: 0px;
+    left: -120px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    margin-bottom: 50px;
+}
+
+.submit {
+    position: relative;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
