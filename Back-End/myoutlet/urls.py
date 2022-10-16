@@ -22,4 +22,5 @@ urlpatterns = [
     path('getuser/', include('getuser.urls')),
     path('deleteuser/', include('deleteuser.urls')),
     path('nearbyusers/', include('nearbyusers.urls')),
+    path('updatebattery/', include('updatebattery.urls'))
 ]
